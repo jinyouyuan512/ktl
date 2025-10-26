@@ -1,4 +1,5 @@
 const express = require('express');
+require('dotenv').config(); // Load environment variables from .env file
 const initSqlJs = require('sql.js');
 const fs = require('fs');
 const path = require('path');
@@ -43,6 +44,21 @@ app.get('/', (req, res) => {
 
 app.get('/api/status', (req, res) => {
   res.json({ status: 'ok', message: 'Backend is healthy and running on port ' + port });
+});
+
+// 密钥演示API
+app.get('/api/config', (req, res) => {
+    const secret = process.env.APP_SECRET;
+    if (!secret) {
+        return res.status(500).json({ error: 'APP_SECRET not configured in environment variables.' });
+    }
+    res.json({
+        message: 'API Key loaded successfully',
+        appSecretStatus: secret ? 'Configured' : 'Missing',
+        // NEVER expose the actual secret key in a real application!
+        // For demonstration purposes only:
+        // appSecretValue: secret 
+    });
 });
 
 // 数据库操作API
