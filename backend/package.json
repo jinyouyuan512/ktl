@@ -9,12 +9,13 @@
   },
   "keywords": [
     "node",
-    "express"
+    "express",
+    "sqlite"
   ],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.19.2"
+    "express": "^4.19.2",
+    "sql.js": "^1.13.0"
   }
 }
-
