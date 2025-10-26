@@ -1,0 +1,5 @@
+{
+  "name": "智囊团：AI 游戏攻略辅助平台 (AI Game Strategist)",
+  "description": "A platform that combines high-quality game guides with AI-powered assistance to help players solve specific, real-time problems in games. It features an AI chatbot for Q&A and automatic summaries for long articles.",
+  "requestFramePermissions": []
+}
